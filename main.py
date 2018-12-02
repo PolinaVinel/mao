@@ -7,7 +7,9 @@ import matplotlib.transforms as transforms
 data = pd.read_csv('data/mao_b.csv')
 
 
-# data.groupby(['time', 'concentration']).describe()
+data.concentration.describe()
+
+
 # data['abs_c'] = 0
 
 # data.loc[data.concentration == 5, 'abc_c'] = 0.2
@@ -24,10 +26,10 @@ data = pd.read_csv('data/mao_b.csv')
 def show_concentration_plot(data, title):
     fig, ax = plt.subplots()
     # sns.swarmplot(x='concentration', y='D', data=data, edgecolor="black", linewidth=.9, ax=ax)
-    sns.boxplot(x='concentration', y='D', data=data, saturation=1, ax=ax)
-    sns.pointplot(x='concentration', y='D', data=data, linestyles='--', scale=0.4,
+    sns.boxplot(x='concentration', y='value', data=data, saturation=1, ax=ax)
+    sns.pointplot(x='concentration', y='value', data=data, linestyles='--', scale=0.4,
                   color='k', errwidth=0, capsize=0, ax=ax)
-    plt.ylabel("D")
+    plt.ylabel("value")
     plt.title(title)
 
     plt.ylim(0, 0.8)
@@ -38,10 +40,10 @@ def show_concentration_plot(data, title):
 def show_time_plot(data, title):
     fig, ax = plt.subplots()
     # sns.swarmplot(x='time', y='D', data=data, edgecolor="black", linewidth=.9, ax=ax)
-    sns.boxplot(x='time', y='D', data=data, saturation=1, ax=ax)
-    sns.pointplot(x='time', y='D', data=data, linestyles='--', scale=0.4,
+    sns.boxplot(x='time', y='value', data=data, saturation=1, ax=ax)
+    sns.pointplot(x='time', y='value', data=data, linestyles='--', scale=0.4,
                   color='k', errwidth=0, capsize=0, ax=ax)
-    plt.ylabel("D")
+    plt.ylabel("value")
     plt.title(title)
 
     plt.ylim(0, 0.8)
@@ -49,7 +51,7 @@ def show_time_plot(data, title):
     plt.show()
 
 
-# show_concentration_plot(data=data[data.time == 5], title='Time 5 min')
-# show_concentration_plot(data=data[data.time == 10], title='Time 10 min')
-show_concentration_plot(data=data, title='Time all min')
-show_time_plot(data=data, title='concentration all min')
+show_concentration_plot(data=data[data.time == 5], title='Time 5 min')
+show_concentration_plot(data=data[data.time == 10], title='Time 10 min')
+# show_concentration_plot(data=data, title='Time')
+# show_time_plot(data=data, title='concentration')
