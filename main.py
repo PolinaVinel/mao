@@ -155,4 +155,27 @@ plt.xlabel("t,min")
 plt.title("40 минут инубации с ДНФГ, 0,93 г/л")
 plt.show()
 
+import pandas as pd
+import seaborn as sns
 
+import matplotlib.pyplot as plt
+import numpy as np
+x = [5, 10, 15, 20, 25, 30, 35]
+y = [2.2267, 2.2190, 2.2139, 2.1312, 2.0939, 2.0596]
+sns.lineplot(x, y)
+
+y = [1.2090, 1.2019, 1.2021, 1.1983, 1.1966, 1.1933]
+sns.lineplot(x, y)
+
+y = [0.6827, 0.6824, 0.6806, 0.6791, 0.6816, 0.6776]
+sns.lineplot(x, y)
+
+y = [0.3504, 0.3498, 0.3479, 0.3527, 0.3476, 0.3478]
+sns.lineplot(x, y)
+
+plt.ylabel("D")
+plt.xlabel("t,min")
+
+
+plt.title("40 минут инубации с ДНФГ, 0,93 г/л")
+plt.show()
